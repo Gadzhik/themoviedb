@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/Theme/app_button_style.dart';
+import 'package:themoviedb/widgets/auth/main_screen/main_screen_widget.dart';
 
 class AuthWidget extends StatefulWidget {
   const AuthWidget({Key? key}) : super(key: key);
@@ -90,7 +91,10 @@ class __FormWidgetState extends State<_FormWidget> {
     // Валидируем поля
     if (login == 'admin' && password == 'admin') {
       errorText = null;
-      print('Open app');
+
+      // Add navigation througth screeens(Переходим со страницы логина на MainScreen)
+
+      Navigator.of(context).pushNamed('/main_screen');
     } else {
       errorText = 'Enter valid login or password!';
     }
